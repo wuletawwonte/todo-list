@@ -1,6 +1,6 @@
-# webpack-boilerplate
+# Todo list app
 
-> Webpack boilerplate repository for use as a starter in projects.
+> A Javascript to do list web app that keep track of actions or todos.
 
 ## Built With
 
