@@ -108,10 +108,14 @@ li p {
 }
 
 .new-task {
-  color: var(--gray-3);
-  font-style: italic;
+  color: var(--black);
   font-size: 16px;
   border: none;
   outline: none;
   flex-grow: 1;
+}
+
+.new-task::placeholder {
+  color: var(--gray-3);
+  font-style: italic;
 }
