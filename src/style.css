@@ -1,7 +1,7 @@
 :root {
   --primary: #4096e2;
   --white: #fff;
-  --gray: #f0f0f0;
+  --gray: #e2dfdf;
   --gray-2: #f6f6f6;
   --gray-3: #959595;
   --black: #000;
@@ -39,7 +39,7 @@ body {
 
 li {
   padding: 13px 18px 13px 13px;
-  border-bottom: 1.3px solid var(--gray);
+  border-bottom: 1.4px solid var(--gray);
   display: flex;
   align-items: center;
   justify-content: space-between;
