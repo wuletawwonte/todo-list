@@ -1,7 +1,32 @@
+:root {
+  --primary: #4096e2;
+  --white: #fff;
+}
+
 * {
   margin: 0;
 }
 
 body {
-  background-color: bisque;
+  background-color: var(--primary);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo {
+  margin-top: 100px;
+  background-color: var(--white);
+  width: 400px;
+  box-shadow: 0 2px 5px black;
+  border-radius: 5px;
+  padding: 20px 0;
+}
+
+#tasks {
+  padding: 0;
+  list-style: none;
 }
