@@ -1,6 +1,9 @@
 :root {
   --primary: #4096e2;
   --white: #fff;
+  --gray: #f0f0f0;
+  --black: #000;
+  --black-2: #bdbdbd;
 }
 
 * {
@@ -20,7 +23,7 @@ body {
 .todo {
   margin-top: 100px;
   background-color: var(--white);
-  width: 400px;
+  width: 450px;
   box-shadow: 0 2px 5px black;
   border-radius: 5px;
   padding: 20px 0;
@@ -29,4 +32,43 @@ body {
 #tasks {
   padding: 0;
   list-style: none;
+}
+
+li {
+  padding: 10px 18px 10px 10px;
+  border-bottom: 1.3px solid var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li:nth-child(1) {
+  border-top: 1.3px solid var(--gray);;
+}
+
+li i {
+  color: var(--black-2);
+  font-size: 20px;
+  transition: color 0.1s ease-in-out;
+}
+
+li p {
+  font-size: 15px;
+}
+
+.in-list-container {
+  display: flex;
+  gap: 10px;
+}
+
+.drag-btn {
+  border: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  cursor: move;
+}
+
+.drag-btn:hover i {
+  color: var(--black);
 }

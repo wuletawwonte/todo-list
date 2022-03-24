@@ -21,8 +21,14 @@ let tasks = [
 const tasksContainer = document.getElementById('tasks');
 
 const loadTasks = () => {
-  tasksContainer.innerHTML = tasks.map(task => {
-    return `<li>${task.description}</li>`;
+  tasksContainer.innerHTML += tasks.map(task => {
+    return `<li>
+      <div class="in-list-container">
+        <input type="checkbox">
+        <p>${task.description}</p>
+      </div>
+      <button class="drag-btn"><i class="fas fa-ellipsis-v"></i></button>
+    </li>`;
   }).join('');
 }
 
