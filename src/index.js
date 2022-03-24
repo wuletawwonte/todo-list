@@ -1,12 +1,21 @@
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
+let tasks = [
+  {
+    description: "Go to AMU and sign the petition",
+    completed: false,
+    index: 0
+  },
+  {
+    description: "Build the website for research directorate",
+    completed: false,
+    index: 0
+  },
+  {
+    description: "Install linux server in the machine",
+    completed: false,
+    index: 0
+  }
+]
 
 document.body.appendChild(component());
