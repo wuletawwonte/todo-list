@@ -1,0 +1,121 @@
+:root {
+  --primary: #4096e2;
+  --white: #fff;
+  --gray: #f0f0f0;
+  --gray-2: #f6f6f6;
+  --gray-3: #959595;
+  --black: #000;
+  --black-2: #bdbdbd;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo {
+  margin-top: 100px;
+  background-color: var(--white);
+  width: 500px;
+  box-shadow: 0 2px 5px black;
+  padding: 0;
+}
+
+#tasks {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 13px 18px 13px 13px;
+  border-bottom: 1.3px solid var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li button i {
+  color: var(--black-2);
+  font-size: 20px;
+  transition: color 0.1s ease-in-out;
+}
+
+li p {
+  font-size: 14px;
+}
+
+.in-list-container {
+  display: flex;
+  gap: 13px;
+}
+
+.in-list-container p {
+  color: var(--black);
+}
+
+.li-btn {
+  border: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  align-items: flex-end;
+}
+
+.drag-btn {
+  cursor: move;
+}
+
+.title-li i {
+  font-size: 16px;
+}
+
+.add-task-btn i {
+  font-size: 16px;
+}
+
+.drag-btn:hover i {
+  color: var(--black);
+}
+
+.clear-task-li {
+  justify-content: center;
+  background-color: var(--gray-2);
+}
+
+.clear-task-li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.title-li {
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.title-li > button:hover i {
+  color: var(--black);
+}
+
+.new-task {
+  color: var(--black);
+  font-size: 16px;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+.new-task::placeholder {
+  color: var(--gray-3);
+  font-style: italic;
+}

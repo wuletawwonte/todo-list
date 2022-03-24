@@ -1,10 +1,33 @@
-function component() {
-  const element = document.createElement('div');
+import './style.css';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+const tasks = [
+  {
+    description: 'Go to AMU and sign the petition',
+    completed: false,
+    index: 3,
+  },
+  {
+    description: 'Build the website for research directorate',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Install linux server in the machine',
+    completed: false,
+    index: 2,
+  },
+];
 
-  return element;
-}
+const tasksContainer = document.getElementById('tasks');
 
-document.body.appendChild(component());
+const loadTasks = () => {
+  tasksContainer.innerHTML += `${tasks.sort((a, b) => a.index - b.index).map((task) => `<li>
+      <div class="in-list-container">
+        <input type="checkbox">
+        <p>${task.description}</p>
+      </div>
+      <button type="button" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
+    </li>`).join('')}<li class="clear-task-li"><button type="button">Clear all completed</button></li>`;
+};
+
+window.onload = loadTasks();
