@@ -113,4 +113,5 @@ li p {
   font-size: 16px;
   border: none;
   outline: none;
+  flex-grow: 1;
 }
