@@ -28,6 +28,8 @@ body {
   width: 500px;
   box-shadow: 0 2px 5px black;
   padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 #tasks {
