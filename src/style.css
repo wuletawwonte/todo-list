@@ -75,6 +75,14 @@ li p {
   cursor: move;
 }
 
+.title-li i {
+  font-size: 16px;
+}
+
+.add-task-btn i {
+  font-size: 16px;
+}
+
 .drag-btn:hover i {
   color: var(--black);
 }
@@ -95,16 +103,8 @@ li p {
   padding-right: 20px;
 }
 
-.title-li i {
-  font-size: 16px;
-}
-
 .title-li > button:hover i {
   color: var(--black);
-}
-
-.add-task-btn i {
-  font-size: 16px;
 }
 
 .new-task {
