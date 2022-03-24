@@ -27,9 +27,9 @@ const loadTasks = () => {
         <input type="checkbox">
         <p>${task.description}</p>
       </div>
-      <button class="drag-btn"><i class="fas fa-ellipsis-v"></i></button>
+      <button class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
     </li>`;
-  }).join('');
+  }).join('') + `<li class="clear-task-li"><button>Clear all completed</button></li>`;
 }
 
 window.onload = loadTasks();

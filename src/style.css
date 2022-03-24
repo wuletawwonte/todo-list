@@ -2,6 +2,7 @@
   --primary: #4096e2;
   --white: #fff;
   --gray: #f0f0f0;
+  --gray-2: #f6f6f6;
   --black: #000;
   --black-2: #bdbdbd;
 }
@@ -23,10 +24,9 @@ body {
 .todo {
   margin-top: 100px;
   background-color: var(--white);
-  width: 450px;
+  width: 500px;
   box-shadow: 0 2px 5px black;
-  border-radius: 5px;
-  padding: 20px 0;
+  padding: 0;
 }
 
 #tasks {
@@ -35,40 +35,58 @@ body {
 }
 
 li {
-  padding: 10px 18px 10px 10px;
+  padding: 13px 18px 13px 13px;
   border-bottom: 1.3px solid var(--gray);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-li:nth-child(1) {
-  border-top: 1.3px solid var(--gray);;
-}
-
-li i {
+li button i {
   color: var(--black-2);
   font-size: 20px;
   transition: color 0.1s ease-in-out;
 }
 
 li p {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .in-list-container {
   display: flex;
-  gap: 10px;
+  gap: 13px;
 }
 
-.drag-btn {
+.in-list-container p {
+  color: var(--black);
+}
+
+.li-btn {
   border: none;
   background-color: transparent;
   width: 20px;
   height: 20px;
+}
+
+.drag-btn {
   cursor: move;
+}
+
+.add-task-btn {
+  cursor: pointer;
 }
 
 .drag-btn:hover i {
   color: var(--black);
+}
+
+.clear-task-li {
+  justify-content: center;
+  background-color: var(--gray-2);
+}
+
+.clear-task-li button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
