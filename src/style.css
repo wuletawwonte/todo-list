@@ -3,6 +3,7 @@
   --white: #fff;
   --gray: #f0f0f0;
   --gray-2: #f6f6f6;
+  --gray-3: #959595;
   --black: #000;
   --black-2: #bdbdbd;
 }
@@ -66,14 +67,12 @@ li p {
   background-color: transparent;
   width: 20px;
   height: 20px;
+  cursor: pointer;
+  align-items: flex-end;
 }
 
 .drag-btn {
   cursor: move;
-}
-
-.add-task-btn {
-  cursor: pointer;
 }
 
 .drag-btn:hover i {
@@ -89,4 +88,29 @@ li p {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.title-li {
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.title-li i {
+  font-size: 16px;
+}
+
+.title-li > button:hover i {
+  color: var(--black);
+}
+
+.add-task-btn i {
+  font-size: 16px;
+}
+
+.new-task {
+  color: var(--gray-3);
+  font-style: italic;
+  font-size: 16px;
+  border: none;
+  outline: none;
 }
