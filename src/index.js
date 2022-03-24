@@ -16,6 +16,14 @@ let tasks = [
     completed: false,
     index: 0
   }
-]
+];
 
-document.body.appendChild(component());
+const tasksContainer = document.getElementById('tasks');
+
+const loadTasks = () => {
+  tasksContainer.innerHTML = tasks.map(task => {
+    return `<li>${task.description}</li>`;
+  }).join('');
+}
+
+window.onload = loadTasks();
