@@ -14,7 +14,7 @@ const loadTasks = () => {
       .map((task) => `<li class="task-item">
             <div class="in-list-container">
               <input type="checkbox">
-              <p class="task-description" contenteditable="true">${task.description}</p>
+              <p class="task-description" contenteditable="true" data-tid="${task.index}">${task.description}</p>
             </div>
             <button type="button" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
           </li>`)
@@ -29,7 +29,7 @@ addTaskForm.addEventListener('submit', (event) => {
   const task = {
     description: newTask.value,
     completed: false,
-    index: allTasks.length,
+    index: allTasks.size() + 1,
   };
   allTasks.add(task);
   newTask.value = null;
@@ -38,9 +38,10 @@ addTaskForm.addEventListener('submit', (event) => {
 
 const taskDescriptions = document.querySelectorAll('.task-description');
 
-console.log(taskDescriptions);
-
 taskDescriptions.forEach((taskItem) => {
+  taskItem.addEventListener('keyup', (e) => {
+    allTasks.update(taskItem.dataset.tid, taskItem.textContent);
+  });
   taskItem.addEventListener('focus', (e) => {
     taskItem.parentElement.parentElement.style = "background-color: #fffdca";    
   });
@@ -48,5 +49,3 @@ taskDescriptions.forEach((taskItem) => {
     taskItem.parentElement.parentElement.style = "background-color: #fff";
   })
 });
-
-const taskItems = document.querySelectorAll('.task-item');
