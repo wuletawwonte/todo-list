@@ -23,7 +23,7 @@ const loadTasks = () => {
           </li>`,
       )
       .join('');
-    tasksContainer.innerHTML += `<li class='clear-task-li'><button type='button'>Clear all completed</button></li>`;
+    tasksContainer.innerHTML += '<li class=\'clear-task-li\'><button type=\'button\'>Clear all completed</button></li>';
 
     const deleteBtns = document.querySelectorAll('.delete-btn');
 

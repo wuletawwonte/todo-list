@@ -9,7 +9,7 @@ export default class Tasks {
   }
 
   remove(id) {
-    this.tasks.splice(id-1, 1);
+    this.tasks.splice(id - 1, 1);
     this.tasks.forEach((task, index) => {
       task.index = index + 1;
     });
@@ -18,7 +18,7 @@ export default class Tasks {
 
   update(id, description) {
     this.tasks.forEach((item, arrIndex) => {
-      if(item.index == id) {
+      if (item.index === id) {
         this.tasks[arrIndex].description = description;
       }
     });
