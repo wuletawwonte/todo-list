@@ -141,3 +141,11 @@ li p {
   color: var(--gray-3);
   font-style: italic;
 }
+
+.active-btn {
+  display: block
+}
+
+.hidden-btn {
+  display: none;
+}

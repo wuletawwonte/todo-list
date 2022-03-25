@@ -16,7 +16,8 @@ const loadTasks = () => {
               <input type="checkbox">
               <p class="task-description" contenteditable="true" data-tid="${task.index}">${task.description}</p>
             </div>
-            <button type="button" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
+            <button type="button" id="delete${task.index}" class="li-btn delete-btn hidden-btn"><i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" id="drag${task.index}" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
           </li>`)
       .join('');
   }
@@ -43,9 +44,23 @@ taskDescriptions.forEach((taskItem) => {
     allTasks.update(taskItem.dataset.tid, taskItem.textContent);
   });
   taskItem.addEventListener('focus', (e) => {
-    taskItem.parentElement.parentElement.style = "background-color: #fffdca";    
+    taskItem.parentElement.parentElement.style = "background-color: #fffdca";
+    makeActive(taskItem.dataset.tid, 'delete');
   });
   taskItem.addEventListener('blur', (e) => {
     taskItem.parentElement.parentElement.style = "background-color: #fff";
+    makeActive(taskItem.dataset.tid, 'drag');
   })
 });
+
+const makeActive = (id, btnName) => {
+  const deleteBtn = document.getElementById('delete'+id);
+  const dragBtn = document.getElementById('drag'+id);
+  if(btnName == 'delete') {
+    deleteBtn.style = 'display: block';
+    dragBtn.style = 'display: none';
+  } else {
+    deleteBtn.style = 'display: none';
+    dragBtn.style = 'display: block';
+  }
+}
