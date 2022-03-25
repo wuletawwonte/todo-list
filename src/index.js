@@ -7,23 +7,23 @@ const tasksContainer = document.getElementById('tasks');
 
 const loadTasks = () => {
   if (allTasks.length !== 0) {
-    tasksContainer.innerHTML = `<li class="title-li"><p>Todays Todo List</p><button type="button" class="li-btn"><i class="fa-solid fa-arrows-rotate"></i></button></li>
-        <li><form id="add-task"><input class="new-task" required placeholder="Add to your list"><button type="submit" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></form></li>
+    tasksContainer.innerHTML = `<div class="entry title-li"><p>Todays Todo List</p><button type="button" class="li-btn"><i class="fa-solid fa-arrows-rotate"></i></button></div>
+        <div class="entry"><form id="add-task"><input class="new-task" required placeholder="Add to your list"><button type="submit" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></form></div>
       `;
     tasksContainer.innerHTML += allTasks.tasks
       .sort((a, b) => a.index - b.index)
       .map(
-        (task) => `<li class="task-item">
+        (task) => `<div class="entry task-item">
             <div class="in-list-container">
               <input type="checkbox">
               <p class="task-description" contenteditable="true" data-tid="${task.index}">${task.description}</p>
             </div>
             <button type="button" data-taskid="${task.index}" id="delete${task.index}" class="li-btn delete-btn"><i class="fa-solid fa-trash-can"></i></button>
             <button type="button" id="drag${task.index}" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
-          </li>`,
+          </div>`,
       )
       .join('');
-    tasksContainer.innerHTML += '<li class=\'clear-task-li\'><button type=\'button\'>Clear all completed</button></li>';
+    tasksContainer.innerHTML += '<div class="entry clear-task-li"><button type="button">Clear all completed</button></div>';
 
     const deleteBtns = document.querySelectorAll('.delete-btn');
 

@@ -39,7 +39,7 @@ body {
   list-style: none;
 }
 
-li {
+.entry {
   height: 45px;
   padding-left: 18px;
   padding-right: 13px;
@@ -49,13 +49,25 @@ li {
   justify-content: space-between;
 }
 
-li button i {
+.title-li i {
+  font-size: 16px;
+}
+
+.add-task-btn i {
+  font-size: 16px;
+}
+
+.delete-btn i {
+  font-size: 17px;
+}
+
+.entry button i {
   color: var(--black-2);
   font-size: 20px;
   transition: color 0.1s ease-in-out;
 }
 
-li p {
+.entry p {
   font-size: 14px;
 }
 
@@ -92,20 +104,8 @@ li p {
   cursor: move;
 }
 
-.title-li i {
-  font-size: 16px;
-}
-
-.add-task-btn i {
-  font-size: 16px;
-}
-
 .delete-btn {
   margin-right: 3px;
-}
-
-.delete-btn i {
-  font-size: 17px;
 }
 
 .delete-btn:hover i,
