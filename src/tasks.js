@@ -18,7 +18,7 @@ export default class Tasks {
 
   update(id, description) {
     this.tasks.forEach((item, arrIndex) => {
-      if (item.index === id) {
+      if (item.index === parseInt(id)) {
         this.tasks[arrIndex].description = description;
       }
     });
