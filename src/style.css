@@ -155,5 +155,5 @@ li p {
 }
 
 .hidden-btn {
-  display: none;
+  visibility: hidden;
 }

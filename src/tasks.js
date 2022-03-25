@@ -9,7 +9,10 @@ export default class Tasks {
   }
 
   remove(id) {
-    this.tasks.splice(id, 1);
+    this.tasks.splice(id-1, 1);
+    this.tasks.forEach((task, index) => {
+      task.index = index + 1;
+    });
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
