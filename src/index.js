@@ -24,15 +24,14 @@ const loadTasks = () => {
 
 addTaskForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (newTask.value !== null) {
-    const task = {
-      description: newTask.value,
-      completed: false,
-      index: allTasks.length,
-    };
-    allTasks.add(task);
-    loadTasks();
-  }
+  const task = {
+    description: newTask.value,
+    completed: false,
+    index: allTasks.length,
+  };
+  allTasks.add(task);
+  newTask.value = null;
+  loadTasks();
 });
 
 window.onload = loadTasks();
