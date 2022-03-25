@@ -14,6 +14,7 @@
 
 body {
   background-color: var(--primary);
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
 }
 
 .main {
@@ -39,7 +40,9 @@ body {
 }
 
 li {
-  padding: 13px 18px 13px 13px;
+  height: 45px;
+  padding-left: 18px;
+  padding-right: 13px;
   border-bottom: 1.4px solid var(--gray);
   display: flex;
   align-items: center;
@@ -59,10 +62,21 @@ li p {
 .in-list-container {
   display: flex;
   gap: 13px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
 }
 
 .in-list-container p {
   color: var(--black);
+}
+
+.task-description {
+  flex-grow: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  outline: none;
 }
 
 .li-btn {
