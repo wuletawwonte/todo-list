@@ -14,6 +14,7 @@
 
 body {
   background-color: var(--primary);
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
 }
 
 .main {
@@ -26,7 +27,8 @@ body {
   margin-top: 100px;
   background-color: var(--white);
   width: 500px;
-  box-shadow: 0 2px 5px black;
+  border-radius: 3px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
   padding: 0;
   margin-left: 10px;
   margin-right: 10px;
@@ -37,31 +39,56 @@ body {
   list-style: none;
 }
 
-li {
-  padding: 13px 18px 13px 13px;
+.entry {
+  height: 45px;
+  padding-left: 18px;
+  padding-right: 13px;
   border-bottom: 1.4px solid var(--gray);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-li button i {
+.title-li i {
+  font-size: 16px;
+}
+
+.add-task-btn i {
+  font-size: 16px;
+}
+
+.delete-btn i {
+  font-size: 17px;
+}
+
+.entry button i {
   color: var(--black-2);
   font-size: 20px;
   transition: color 0.1s ease-in-out;
 }
 
-li p {
+.entry p {
   font-size: 14px;
 }
 
 .in-list-container {
   display: flex;
   gap: 13px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: center;
 }
 
 .in-list-container p {
   color: var(--black);
+}
+
+.task-description {
+  flex-grow: 1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  outline: none;
 }
 
 .li-btn {
@@ -77,14 +104,11 @@ li p {
   cursor: move;
 }
 
-.title-li i {
-  font-size: 16px;
+.delete-btn {
+  margin-right: 3px;
 }
 
-.add-task-btn i {
-  font-size: 16px;
-}
-
+.delete-btn:hover i,
 .drag-btn:hover i {
   color: var(--black);
 }
@@ -109,6 +133,11 @@ li p {
   color: var(--black);
 }
 
+#add-task {
+  flex-grow: 1;
+  display: flex;
+}
+
 .new-task {
   color: var(--black);
   font-size: 16px;
@@ -120,4 +149,12 @@ li p {
 .new-task::placeholder {
   color: var(--gray-3);
   font-style: italic;
+}
+
+.active-btn {
+  display: block;
+}
+
+.hidden-btn {
+  visibility: hidden;
 }
