@@ -100,7 +100,15 @@ li p {
   font-size: 16px;
 }
 
-.drag-btn:hover i {
+.delete-btn {
+  margin-right: 3px;
+}
+
+.delete-btn i {
+  font-size: 17px;
+}
+
+.delete-btn:hover i, .drag-btn:hover i {
   color: var(--black);
 }
 
