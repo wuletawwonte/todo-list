@@ -27,8 +27,8 @@ body {
   margin-top: 100px;
   background-color: var(--white);
   width: 500px;
-	border-radius: 3px;
-	box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+  border-radius: 3px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
   padding: 0;
   margin-left: 10px;
   margin-right: 10px;
@@ -108,7 +108,8 @@ li p {
   font-size: 17px;
 }
 
-.delete-btn:hover i, .drag-btn:hover i {
+.delete-btn:hover i,
+.drag-btn:hover i {
   color: var(--black);
 }
 
@@ -151,7 +152,7 @@ li p {
 }
 
 .active-btn {
-  display: block
+  display: block;
 }
 
 .hidden-btn {
