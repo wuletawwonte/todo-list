@@ -15,8 +15,9 @@
           
           <ul id="tasks">
               <li class="title-li"><p>Todays Todo List</p><button type="button" class="li-btn"><i class="fa-solid fa-arrows-rotate"></i></button></li>
-              <li><input class="new-task" placeholder="Add to your list" ><button type="button" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></li>
-              
+              <li><form id="add-task"><input class="new-task" required placeholder="Add to your list"><button type="submit" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></form></li>
+              <div id="tasks-only"></div>
+              <li class='clear-task-li'><button type='button'>Clear all completed</button></li>
           </ul>
         </div>
       </div>

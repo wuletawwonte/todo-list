@@ -1,33 +1,39 @@
 import './style.css';
+import Tasks from './tasks.js';
 
-const tasks = [
-  {
-    description: 'Go to AMU and sign the petition',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'Build the website for research directorate',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Install linux server in the machine',
-    completed: false,
-    index: 2,
-  },
-];
+const allTasks = new Tasks();
 
-const tasksContainer = document.getElementById('tasks');
+const tasksContainer = document.getElementById('tasks-only');
+const newTask = document.querySelector('.new-task');
+const addTaskForm = document.getElementById('add-task');
 
 const loadTasks = () => {
-  tasksContainer.innerHTML += `${tasks.sort((a, b) => a.index - b.index).map((task) => `<li>
-      <div class="in-list-container">
-        <input type="checkbox">
-        <p>${task.description}</p>
-      </div>
-      <button type="button" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
-    </li>`).join('')}<li class="clear-task-li"><button type="button">Clear all completed</button></li>`;
+  if (allTasks.length !== 0) {
+    tasksContainer.innerHTML = allTasks.tasks
+      .sort((a, b) => a.index - b.index)
+      .map((task) => `<li>
+            <div class="in-list-container">
+              <input type="checkbox">
+              <p>${task.description}</p>
+            </div>
+            <button type="button" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>`)
+      .join('');
+  }
 };
 
+addTaskForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (newTask.value !== null) {
+    const task = {
+      description: newTask.value,
+      completed: false,
+      index: allTasks.length,
+    };
+    allTasks.add(task);
+    loadTasks();
+  }
+});
+
 window.onload = loadTasks();
+
