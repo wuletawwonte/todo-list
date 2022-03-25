@@ -3,13 +3,14 @@ import Tasks from './tasks.js';
 
 const allTasks = new Tasks();
 
-const tasksContainer = document.getElementById('tasks-only');
-const newTask = document.querySelector('.new-task');
-const addTaskForm = document.getElementById('add-task');
+const tasksContainer = document.getElementById('tasks');
 
 const loadTasks = () => {
   if (allTasks.length !== 0) {
-    tasksContainer.innerHTML = allTasks.tasks
+    tasksContainer.innerHTML = `<li class="title-li"><p>Todays Todo List</p><button type="button" class="li-btn"><i class="fa-solid fa-arrows-rotate"></i></button></li>
+        <li><form id="add-task"><input class="new-task" required placeholder="Add to your list"><button type="submit" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></form></li>
+      `;
+    tasksContainer.innerHTML += allTasks.tasks
       .sort((a, b) => a.index - b.index)
       .map(
         (task) => `<li class="task-item">
@@ -22,6 +23,7 @@ const loadTasks = () => {
           </li>`,
       )
       .join('');
+    tasksContainer.innerHTML += `<li class='clear-task-li'><button type='button'>Clear all completed</button></li>`;
 
     const deleteBtns = document.querySelectorAll('.delete-btn');
 
@@ -35,6 +37,9 @@ const loadTasks = () => {
 };
 
 window.onload = loadTasks();
+
+const addTaskForm = document.getElementById('add-task');
+const newTask = document.querySelector('.new-task');
 
 addTaskForm.addEventListener('submit', (event) => {
   event.preventDefault();
