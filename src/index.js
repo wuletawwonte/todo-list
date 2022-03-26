@@ -4,6 +4,7 @@ import Tasks from './tasks.js';
 const allTasks = new Tasks();
 
 const tasksContainer = document.getElementById('tasks');
+const taskDescriptions = document.querySelectorAll('.task-description');
 
 const loadTasks = () => {
   if (allTasks.length !== 0) {
@@ -36,14 +37,13 @@ const loadTasks = () => {
 
     const taskStatuses = document.querySelectorAll('.task-status');
 
-    taskStatuses.forEach(taskStatus => {
-      taskStatus.addEventListener('change', () => {        
-        allTasks.changeStatus(taskStatus.dataset.id, taskStatus.checked);    
-        taskDescriptions.forEach(tdesc => {
-          if(tdesc.dataset.tid === taskStatus.dataset.id) {
+    taskStatuses.forEach((taskStatus) => {
+      taskStatus.addEventListener('change', () => {
+        allTasks.changeStatus(taskStatus.dataset.id, taskStatus.checked);
+        taskDescriptions.forEach((tdesc) => {
+          if (tdesc.dataset.tid === taskStatus.dataset.id) {
             tdesc.classList.add('task-line-through');
             tdesc.style = 'color: red;';
-            console.log(tdesc);
           }
         });
         loadTasks();
@@ -56,7 +56,6 @@ const loadTasks = () => {
       allTasks.removeCompleted();
       loadTasks();
     });
-
   }
 };
 
@@ -76,8 +75,6 @@ addTaskForm.addEventListener('submit', (event) => {
   newTask.value = '';
   loadTasks();
 });
-
-const taskDescriptions = document.querySelectorAll('.task-description');
 
 taskDescriptions.forEach((taskItem) => {
   taskItem.addEventListener('keyup', () => {
