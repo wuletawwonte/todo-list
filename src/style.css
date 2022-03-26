@@ -158,3 +158,8 @@ body {
 .hidden-btn {
   visibility: hidden;
 }
+
+.task-line-through {
+  text-decoration: line-through;
+  color: red;
+}
