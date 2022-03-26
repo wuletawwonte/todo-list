@@ -40,6 +40,9 @@ export default class Tasks {
 
   removeCompleted() {
     this.tasks = this.tasks.filter((item) => !item.completed);
+    this.tasks.forEach((task, index) => {
+      task.index = index + 1;
+    });
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
