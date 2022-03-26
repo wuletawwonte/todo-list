@@ -15,15 +15,15 @@ const loadTasks = () => {
       .map(
         (task) => `<div class="entry task-item">
             <div class="in-list-container">
-              <input type="checkbox">
-              <p class="task-description" contenteditable="true" data-tid="${task.index}">${task.description}</p>
+              <input class="task-status" data-id="${task.index}" type="checkbox" ${task.completed ? 'checked' : ''}>
+              <p class="task-description" id="desc${task.index}" contenteditable="true" data-tid="${task.index}">${task.description}</p>
             </div>
             <button type="button" data-taskid="${task.index}" id="delete${task.index}" class="li-btn delete-btn"><i class="fa-solid fa-trash-can"></i></button>
             <button type="button" id="drag${task.index}" class="li-btn drag-btn"><i class="fas fa-ellipsis-v"></i></button>
           </div>`,
       )
       .join('');
-    tasksContainer.innerHTML += '<div class="entry clear-task-li"><button type="button">Clear all completed</button></div>';
+    tasksContainer.innerHTML += '<div class="entry clear-task-li"><button id="remove-completed" type="button">Clear all completed</button></div>';
 
     const deleteBtns = document.querySelectorAll('.delete-btn');
 
@@ -33,6 +33,30 @@ const loadTasks = () => {
         loadTasks();
       });
     });
+
+    const taskStatuses = document.querySelectorAll('.task-status');
+
+    taskStatuses.forEach(taskStatus => {
+      taskStatus.addEventListener('change', () => {        
+        allTasks.changeStatus(taskStatus.dataset.id, taskStatus.checked);    
+        taskDescriptions.forEach(tdesc => {
+          if(tdesc.dataset.tid === taskStatus.dataset.id) {
+            tdesc.classList.add('task-line-through');
+            tdesc.style = 'color: red;';
+            console.log(tdesc);
+          }
+        });
+        loadTasks();
+      });
+    });
+
+    const deleteCompleted = document.getElementById('remove-completed');
+
+    deleteCompleted.addEventListener('click', () => {
+      allTasks.removeCompleted();
+      loadTasks();
+    });
+
   }
 };
 

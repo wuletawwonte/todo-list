@@ -25,7 +25,21 @@ export default class Tasks {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
+  changeStatus(id, status) {
+    this.tasks.forEach((item, arrIndex) => {
+      if(item.index === parseInt(id, 10)) {
+        this.tasks[arrIndex].completed = status;
+      }
+    });
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
   size() {
     return this.tasks.length;
+  }
+
+  removeCompleted() {
+    this.tasks = this.tasks.filter(item => !item.completed);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
