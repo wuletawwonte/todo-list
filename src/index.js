@@ -5,7 +5,6 @@ const allTasks = new Tasks();
 
 const tasksContainer = document.getElementById('tasks');
 
-
 const loadTasks = () => {
   tasksContainer.innerHTML = `<div class="entry title-li"><p>Todays Todo List</p><button type="button" class="li-btn"><i class="fa-solid fa-arrows-rotate"></i></button></div>
       <div class="entry"><form id="add-task"><input class="new-task" required placeholder="Add to your list"><button type="submit" class="li-btn add-task-btn"><i class="fa-solid fa-plus"></i></button></form></div>
@@ -70,7 +69,6 @@ const loadTasks = () => {
         taskItem.parentElement.parentElement.style = 'background-color: #fff';
       });
     });
-    
   }
 
   const addTaskForm = document.getElementById('add-task');
@@ -87,9 +85,6 @@ const loadTasks = () => {
     newTask.value = '';
     loadTasks();
   });
-
 };
 
 window.onload = loadTasks();
-
-
